@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+<table id="list">
+  <thead>
+    <tr>
+      <th>Airline</th>
+      <th>Airport</th>
+      <th>FlightNo</th>
+      <th>Departs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <h1><%= title %></h1>
+    <% flights.forEach(function(m) { %>
+      <tr>
+        <td><%= m.airline %></td>
+        <td><%= m.airport %></td>
+        <td><%= m.flightNo %></td>
+        <td><%= m.departs.toLocaleDateString() + ' - ' + m.departs.toLocaleTimeString()%></td>
+        <!-- <td><a href="/movies/<%= m._id %>">DETAILS</a></td> -->
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+  <%- include('../partials/footer') %>
