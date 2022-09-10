@@ -23,6 +23,7 @@ function create(req, res) {
     if (req.body[key] === '') delete req.body[key];
   }
   const flight = new Flight(req.body);
+  console.log(flight);
   flight.save(function(err) {
     if (err) return res.redirect('/flights/new');
     res.redirect('/flights');
